@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI勉強会 告知ページ</title>
+    <style>
+      :root {
+        --bg: #f4f7fb;
+        --card: #ffffff;
+        --text: #1f2937;
+        --muted: #6b7280;
+        --accent: #4f46e5;
+        --accent-soft: #e0e7ff;
+        --shadow: 0 18px 40px rgba(31, 41, 55, 0.14);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Inter", "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: radial-gradient(circle at 20% 20%, #e0e7ff 0%, #f4f7fb 38%, #eef2ff 100%);
+        color: var(--text);
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 32px 16px;
+      }
+
+      .event-card {
+        width: min(940px, 100%);
+        background: var(--card);
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+      }
+
+      .hero {
+        position: relative;
+        min-height: 360px;
+        background-image:
+          linear-gradient(120deg, rgba(79, 70, 229, 0.36), rgba(6, 182, 212, 0.3)),
+          url("https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=80");
+        background-size: cover;
+        background-position: center;
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(17, 24, 39, 0.22), rgba(17, 24, 39, 0));
+      }
+
+      .content {
+        padding: 34px 36px 40px;
+      }
+
+      .item-list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        gap: 18px;
+      }
+
+      .item {
+        display: grid;
+        grid-template-columns: 110px 1fr;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .label {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: var(--accent-soft);
+        color: var(--accent);
+        font-size: 0.86rem;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+      }
+
+      .value {
+        margin: 0;
+        font-size: clamp(1rem, 2vw, 1.15rem);
+        font-weight: 600;
+        line-height: 1.6;
+      }
+
+      .value.title {
+        font-size: clamp(1.35rem, 2.4vw, 1.8rem);
+        font-weight: 800;
+      }
+
+      @media (max-width: 640px) {
+        .hero {
+          min-height: 260px;
+        }
+
+        .content {
+          padding: 24px 20px 28px;
+        }
+
+        .item {
+          grid-template-columns: 1fr;
+          gap: 8px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="event-card">
+      <section class="hero" aria-label="AI勉強会のイメージ画像"></section>
+
+      <section class="content" aria-label="勉強会情報">
+        <ul class="item-list">
+          <li class="item">
+            <span class="label">タイトル</span>
+            <p class="value title">社内AI勉強会 〜生成AIを仕事で活かす実践アイデア〜</p>
+          </li>
+          <li class="item">
+            <span class="label">開催日時</span>
+            <p class="value">2026年6月12日（金） 18:30〜20:00</p>
+          </li>
+          <li class="item">
+            <span class="label">場所</span>
+            <p class="value">本社 8F コラボレーションラウンジ（オンライン配信あり）</p>
+          </li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
